@@ -2,7 +2,11 @@
 Write a function called `reverseArray` which takes an array as an argument. Without utilizing any of the built-in methods available to your language, return an array with elements in reversed order.
 
 ## Whiteboard Process
+* Whiteboard day 1
 ![Whiteboard Process](./images/Screenshot%202023-06-12%20at%203.05.21%20PM.png)
+
+* Whiteboard day 2
+![Challenge 2 Whiteboard](./images/My%20Day%202%20Whiteboard.png)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -31,3 +35,7 @@ reverseArray(array)
 print(array)` -->
 
 ![Code in Repl.it](./images/Screenshot%202023-06-12%20at%203.10.17%20PM.png)
+
+Day 2 Collaborators
+- Logan Reese
+- TA: Brandon & Tammy
