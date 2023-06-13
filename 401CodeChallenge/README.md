@@ -11,7 +11,7 @@ Write a function called `reverseArray` which takes an array as an argument. With
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 - reverseArray
-  - It seems to be the most efficient way to reverse the array.
+- It seems to be the most efficient way to reverse the array.
 - Big O is O(n) and linear
 
 ## Solution
@@ -36,6 +36,4 @@ print(array)` -->
 
 ![Code in Repl.it](./images/Screenshot%202023-06-12%20at%203.10.17%20PM.png)
 
-Day 2 Collaborators
-- Logan Reese
-- TA: Brandon & Tammy
+
