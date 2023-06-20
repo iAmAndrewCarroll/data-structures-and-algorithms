@@ -66,23 +66,23 @@ def test_insert_before_missing():
 
     linked_list.insert("banana")
 
-    with pytest.raises(TargetError):
+    with pytest.raises(ValueError):
         linked_list.insert_before("radish", "zucchinni")
 
 
-@pytest.mark.skip("TODO")
+#@pytest.mark.skip("TODO")
 def test_insert_after_empty():
     linked_list = LinkedList()
 
-    with pytest.raises(TargetError):
+    with pytest.raises(ValueError):
         linked_list.insert_after("radish", "zucchinni")
 
 
-@pytest.mark.skip("TODO")
+#@pytest.mark.skip("TODO")
 def test_insert_after_missing():
     linked_list = LinkedList()
 
     linked_list.insert("banana")
 
-    with pytest.raises(TargetError):
+    with pytest.raises(ValueError):
         linked_list.insert_after("radish", "zucchinni")
