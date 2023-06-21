@@ -4,113 +4,112 @@ class Node:
         self._next = _next
 
 class LinkedList:
-    """
-    Put docstring here
-    """
-    def __init__(self, head=None, values=None, insert=None):
-        self.head = None
+  def __init__(self, head=None, values=None, insert=None):
+    self.head = None
 
+  def insert (self, value):
+    newNode = Node(value)
+    newNode._next = self.head
+    self.head = newNode
 
-# LinkedList: Apple.
-# Given value: Banana.
-    def insert (self, value):
-        newNode = Node(value)
-        # This is our banana
-        newNode._next = self.head
-        # This is similar to apple
-        self.head = newNode
-        # This identifies our next head
-
-    def append(self, value):
-        newNode = Node(value)
-        if self.head is None:
-            self.head = newNode
-        else:
-            current = self.head
-            while current._next is not None:
-                current = current._next
-            current._next = newNode
-
-    def insert_before(self, value, new_value):
-        current = self.head
-        previous = None
-        if current is None:
-            raise ValueError(f"Value {value} not found in linked list")
-
-        while current is not None and current.value != value:
-            previous = current
-            current = current._next
-
-        if current is None:
-            raise ValueError(f"Value {value} not found in linked list")
-
-        newNode = Node(new_value)
-        newNode._next = current
-        if previous is None:
-            self.head = newNode
-        else:
-            previous._next = newNode
-
-    def insert_after(self, value, new_value):
-        current = self.head
-        while current is not None and current.value != value:
-            current = current._next
-
-        if current is None:
-            raise ValueError(f"Value {value} not found in linked list")
-
-        newNode = Node(new_value)
-        newNode._next = current._next
-        current._next = newNode
-
-    def test_insert_before_empty():
-        linked_list = LinkedList()
-
-        with pytest.raises(ValueError):
-            linked_list.insert_before("radish", "zucchinni")
-
-        assert linked_list.head is None
-
-    def __str__(self):
-      if self.head == None:
-        return "NULL"
-      else:
-        current = self.head
-      output = ""
-      while current:
-        output += f"{{ {current.value} }} -> "
+  def append(self, value):
+    newNode = Node(value)
+    if self.head is None:
+      self.head = newNode
+    else:
+      current = self.head
+      while current._next is not None:
         current = current._next
-      output += "NULL"
-      return output
+      current._next = newNode
 
-    def includes(self, value):
-        current = self.head
-        while current:
-            if current.value == value:
-                return True
-            current = current._next
-        return False
+  def insert_before(self, value, new_value):
+      current = self.head
+      previous = None
+      if current is None:
+        raise ValueError(f"Value {value} not found in linked list")
+
+      while current is not None and current.value != value:
+        previous = current
+        current = current._next
+
+      if current is None:
+        raise ValueError(f"Value {value} not found in linked list")
+
+      newNode = Node(new_value)
+      newNode._next = current
+      if previous is None:
+        self.head = newNode
+      else:
+        previous._next = newNode
+
+  def insert_after(self, value, new_value):
+      current = self.head
+      while current is not None and current.value != value:
+        current = current._next
+
+      if current is None:
+        raise ValueError(f"Value {value} not found in linked list")
+      newNode = Node(new_value)
+      newNode._next = current._next
+      current._next = newNode
+
+  def __str__(self):
+    if self.head == None:
+      return "NULL"
+    else:
+      current = self.head
+    output = ""
+    while current:
+      output += f"{{ {current.value} }} -> "
+      current = current._next
+    output += "NULL"
+    return output
+
+  def includes(self, value):
+    current = self.head
+    while current:
+      if current.value == value:
+          return True
+      current = current._next
+    return False
+
+  def kth_from_end(self, k):
+    current = self.head
+    count = 0
+    while current:
+      count += 1
+      current = current._next
+    if k < 0 or k >= count:
+      raise TargetError("Target not found")
+    current = self.head
+    for i in range(count - k - 1):
+      current = current._next
+    return current.value
+
+class TargetError(Exception):
+  pass
 
 
 
-    def traverse(self):
-        current = self.head
-        while current is not None:
-            print(current.value)
-            current = current._next
 
 
-class TargetError:
-    pass
 
 
-if __name__ == '__main__':
-    node1 = Node(1)
-    node2 = Node(2, node1)
-    # [2] -> [1] -> None
-    print(node1.value)
-    node1.value = 4
-    print(node1.value)
+
+
+
+
+
+
+
+
+# if __name__ == '__main__':
+#     node1 = Node(1)
+#     node2 = Node(2, node1)
+#     # [2] -> [1] -> None
+#     print(node1.value)
+#     node1.value = 4
+#     print(node1.value)
 
 
 
