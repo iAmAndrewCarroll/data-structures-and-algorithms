@@ -1,6 +1,6 @@
-# Day 6 Code Challenge
+# Day 7 Code Challenge
 
-![Challenge 6 Whiteboard](./images/code6.png)
+![Challenge 7 Whiteboard](./images/code7.png)
 
 [Code For Today](https://github.com/iAmAndrewCarroll/data-structures-and-algorithms/pull/18)
 
