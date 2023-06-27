@@ -1,10 +1,8 @@
-# Day 8 Code Challenge
+# Day 11 Code Challenge
 
-![Challenge 8 Whiteboard](./images/Code8.png)
+![Challenge 10 No Whiteboard](./images/Code11.png)
 
-![Purpose Practice Assignment](./images/purpose_practice.png)
-
-[Code For Today](https://github.com/iAmAndrewCarroll/data-structures-and-algorithms/pull/20)
+[Code For Today](https://github.com/iAmAndrewCarroll/data-structures-and-algorithms/pull/22)
 
  - [x] Top-level README “Table of Contents” is updated
  - [x] README for this challenge is complete
@@ -17,6 +15,6 @@
        - [?] Expected failure
        - [?] Edge Case (if applicable/obvious)
 
-# Collaboration with Anthony Sinitsa (like Pizza), Jared C, and Dan Q
+# Collaboration with Raven, chatGPT, Bard, Dan Q, Sarah G, Logan, Jared, Anthony, Slava
 
 # Big shoutouts to ChatGPT for being the real MVP, Bard was there to but was overly verbose, Google, GitHub Repos
