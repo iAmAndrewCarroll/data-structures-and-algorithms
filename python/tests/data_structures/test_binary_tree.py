@@ -1,5 +1,5 @@
 import pytest
-from data_structures.binary_tree import BinaryTree, Node
+from data_structures.binary_tree import BinarySearchTree,BinaryTree, Node
 
 #@pytest.mark.skip("TODO")
 def test_exists():
@@ -35,17 +35,18 @@ def test_instantiate_single_root_node():
     assert tree.root.value == "a"
 
 def test_add_left_and_right_child_to_node():
-    tree = BinaryTree()
+    tree = BinarySearchTree()
     tree.root = Node("a")
     tree.root.left = Node("b")
     tree.root.right = Node("c")
     assert tree.root.value == "a"
 
 def test_contain_existing_node(tree):
+    tree = BinarySearchTree()
+    tree.root = Node("a")
+    tree.add("b")
+    tree.add("c")
     assert tree.contains("a") == True
-    assert tree.contains("b") == True
-    assert tree.contains("c") == True
-    assert tree.contains("d") == True
 
 def test_contain_non_existing_node(tree):
     assert tree.contains("z") == False

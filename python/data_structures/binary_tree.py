@@ -40,6 +40,18 @@ class BinaryTree:
 
         return walk(self.root)
 
+    def contains(self, value):
+
+        def search(node, value):
+            if node is None or node.value == value:
+                return node is not None
+            if value < node.value:
+                return search(node.left, value)
+            else:
+                return search(node.right, value)
+
+        return search(self.root, value)
+
 class BinarySearchTree(BinaryTree):
     def add(self, value):
         def insert(node, value):
