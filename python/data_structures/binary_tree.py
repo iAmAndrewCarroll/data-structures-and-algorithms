@@ -52,6 +52,21 @@ class BinaryTree:
 
         return search(self.root, value)
 
+    def find_maximum_value(self):
+        def find_max(node):
+            if node is None:
+                return float('-inf')
+            max_value = node.value
+            left_max = find_max(node.left)
+            right_max = find_max(node.right)
+            if left_max > max_value:
+                max_value = left_max
+            if right_max > max_value:
+                max_value = right_max
+            return max_value
+
+        return find_max(self.root)
+
 class BinarySearchTree(BinaryTree):
     def add(self, value):
         def insert(node, value):

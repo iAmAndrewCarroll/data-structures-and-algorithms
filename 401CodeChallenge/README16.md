@@ -1,8 +1,8 @@
-# Day 1 Code Challenge
+# Day 16 Code Challenge
 
-![Challenge 13 Whiteboard](./images/Code13.png)
+![Challenge 16 Whiteboard](./images/Code16.png)
 
-[Code For Today](https://github.com/iAmAndrewCarroll/data-structures-and-algorithms/pull/24)
+[Code For Today](https://github.com/iAmAndrewCarroll/data-structures-and-algorithms/pull/27)
 
  - [x] Top-level README “Table of Contents” is updated
  - [x] README for this challenge is complete
