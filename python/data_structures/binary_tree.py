@@ -72,13 +72,13 @@ class BinarySearchTree(BinaryTree):
             self.root = Node(value)
 
     def contains(self, value):
-
         def search(node, value):
             if node is None or node.value == value:
                 return node is not None
             if value < node.value:
-                return search(node.left,  value)
+                return search(node.left, value)
             else:
                 return search(node.right, value)
 
         return search(self.root, value)
+

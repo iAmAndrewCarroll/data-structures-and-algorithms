@@ -1,25 +1,19 @@
 import pytest
-from data_structures.binary_tree import BinarySearchTree,BinaryTree, Node
+from data_structures.binary_tree import BinarySearchTree, BinaryTree, Node
 
-#@pytest.mark.skip("TODO")
 def test_exists():
     assert BinaryTree
 
-#@pytest.mark.skip("TODO")
 def test_pre_order(tree):
     actual = tree.pre_order()
     expected = ["a", "b", "d", "e", "c", "f", "g"]
     assert actual == expected
 
-
-#@pytest.mark.skip("TODO")
 def test_in_order(tree):
     actual = tree.in_order()
     expected = ["d", "b", "e", "a", "f", "c", "g"]
     assert actual == expected
 
-
-#@pytest.mark.skip("TODO")
 def test_post_order(tree):
     actual = tree.post_order()
     expected = ["d", "e", "b", "f", "g", "c", "a"]
@@ -27,7 +21,7 @@ def test_post_order(tree):
 
 def test_instantiate_empty_tree():
     tree = BinaryTree()
-    assert tree.root == None
+    assert tree.root is None
 
 def test_instantiate_single_root_node():
     tree = BinaryTree()
@@ -41,19 +35,6 @@ def test_add_left_and_right_child_to_node():
     tree.root.right = Node("c")
     assert tree.root.value == "a"
 
-def test_contain_existing_node(tree):
-    tree = BinarySearchTree()
-    tree.root = Node("a")
-    tree.add("b")
-    tree.add("c")
-    assert tree.contains("a") == True
-
-def test_contain_non_existing_node(tree):
-    assert tree.contains("z") == False
-    assert tree.contains("x") == False
-    assert tree.contains("y") == False
-    assert tree.contains("w") == False
-
 @pytest.fixture
 def tree():
     """
@@ -62,7 +43,7 @@ def tree():
     d  e    f  g
     """
 
-    tree = BinaryTree()
+    tree = BinarySearchTree()
 
     tree.root = Node("a")
     tree.root.left = Node("b")
@@ -73,4 +54,16 @@ def tree():
     tree.root.right.right = Node("g")
 
     return tree
+
+def test_contains_existing_node(tree):
+    assert tree.contains("a") is True
+    assert tree.contains("b") is True
+    assert tree.contains("c") is True
+
+
+def test_contains_non_existing_node(tree):
+    assert tree.contains("z") is False
+    assert tree.contains("x") is False
+    assert tree.contains("y") is False
+    assert tree.contains("w") is False
 
