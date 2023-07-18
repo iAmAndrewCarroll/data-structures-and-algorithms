@@ -58,4 +58,3 @@ sorted = [1, 3, 4, 8, 9, 7]
 
 As you can see, the insertion sort algorithm is a simple and efficient way to sort an array. It is not the fastest sorting algorithm, but it is easy to understand and implement.
 
-I hope you enjoyed this blog article about the insertion sort algorithm!
