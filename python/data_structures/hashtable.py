@@ -94,17 +94,17 @@ class Hashtable:
         Returns: collection of keys
         """
         # create an empty list
-        keys = []
+        unique_keys = []
         # loop through the hashtable
         for bucket in self.buckets:
             # if there is a node, add the key to the list
             if bucket:
                 current = bucket
                 while current:
-                    keys.append(current.key)
+                    unique_keys.add(current.key)
                     current = current.next
         # return the list
-        return keys
+        return list(unique_keys)
 
     def hash(self, key):
         """
