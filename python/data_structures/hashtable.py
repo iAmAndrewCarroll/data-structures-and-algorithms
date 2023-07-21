@@ -4,6 +4,9 @@ class Node:
         self.value = value
         self.next = None
 
+    def display(self):
+        return [self.key, self.value]
+
 class Hashtable:
     """
     Paramaters: Key, Value
@@ -33,11 +36,14 @@ class Hashtable:
         # if the key is the same, update the value
                     current.value = value
                     return
-                if current.next is None:
-                    break
+                # if current.next is None:
+                #     break
                 current = current.next
         # if the key is different, add a new node
-            current.next = Node(key, value)
+            # current.next = Node(key, value)
+            new_node = Node(key, value)
+            new_node.next = self.buckets[index]
+            self.buckets[index] = new_node
 
     # define the get method of the hashtable class. Takes a key as an argument and returns the associated value if the key is found in the hashtable. If the key is not found, return None.
     def get(self, key):
@@ -83,7 +89,22 @@ class Hashtable:
                 current = current.next
             return False
 
-
+    def keys(self):
+        """
+        Returns: collection of keys
+        """
+        # create an empty list
+        keys = []
+        # loop through the hashtable
+        for bucket in self.buckets:
+            # if there is a node, add the key to the list
+            if bucket:
+                current = bucket
+                while current:
+                    keys.append(current.key)
+                    current = current.next
+        # return the list
+        return keys
 
     def hash(self, key):
         """
@@ -104,10 +125,6 @@ class Hashtable:
         primed = total * 19
         index = primed % self.size
         return index
-
-
-
-
 
 if __name__ == '__main__':
 
