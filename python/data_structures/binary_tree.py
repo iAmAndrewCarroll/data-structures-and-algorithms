@@ -13,6 +13,19 @@ class BinaryTree:
     def __init__(self):
         self.root = None
 
+    def breadth_first_traversal(self):
+        if not self.root:
+            return
+
+        queue = [self.root]
+        while queue:
+            current = queue.pop(0)
+            yield current
+            if current.left:
+                queue.append(current.left)
+            if current.right:
+                queue.append(current.right)
+
     def pre_order(self):
 
         def walk(node):
