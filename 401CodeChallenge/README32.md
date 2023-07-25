@@ -2,7 +2,7 @@
 
 ![Challenge 32 Visual](./images/Code32.png)
 
-[Code For Today - A HOT MESS](https://github.com/iAmAndrewCarroll/data-structures-and-algorithms/blob/main/python/code_challenges/tree_intersection.py)
+[Code For Today - A HOT MESS](https://github.com/iAmAndrewCarroll/data-structures-and-algorithms/blob/main/401CodeChallenge/README32.md)
 
  - [x] Top-level README “Table of Contents” is updated
  - [x] README for this challenge is complete
