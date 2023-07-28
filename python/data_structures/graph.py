@@ -1,27 +1,46 @@
 class Graph:
     """
-    Class
-    Arguments: None
+    Class Graph
+    Arguments: none
     Instantiate: Graph()
-    Return: nnothing
+    return: nothing
     """
     def __init__(self):
         self.adjacency_list = {}
-        # key:value
-        # length
-        # easily access keys or values with loop
-        # Time complexity: O(1)
+        # key: value pair
+        #length
+        #easily access the keys or values with a simple loop
+        # Time Complexity: 0(1)
+
 
     def add_node(self, value):
         """
-        Method: add vertex
+        Method: add node (add_vertex renamed to add_node)
         Arguments: value
         Add a vertex to the graph
         :return: The added vertex
         """
         new_vertex = Vertex(value)
         self.adjacency_list[new_vertex] = []
+        return new_vertex
 
+    def add_vertex(self, value):
+        """
+        Method: add vertex
+        Arguments: value
+        Add a vertex to the graph
+        :return: The added vertex
+        """
+        # self.adjacency_list = {
+        # A: [C, D],
+        # B: [C, F],
+        # C: [A, B, E],
+        # D: [A, E],
+        # E: [D, C, F],
+        # F: [E, B],
+        #}
+        new_vertex = Vertex(value)
+        self.adjacency_list[new_vertex] = []
         return new_vertex
 
     def add_edge(self, start_vertex, end_vertex, weight=0):
@@ -34,7 +53,7 @@ class Graph:
         :return: nothing
         """
         if start_vertex not in self.adjacency_list or end_vertex not in self.adjacency_list:
-            raise KeyError
+            raise KeyError()
         new_edge = Edge(end_vertex, weight)
         self.adjacency_list[start_vertex].append(new_edge)
 
@@ -47,9 +66,7 @@ class Graph:
         """
         return self.adjacency_list.keys()
 
-
     def get_neighbors(self, vertex):
-
         """
         Method: get neighbors
         Arguments: vertex
@@ -71,27 +88,27 @@ class Graph:
 
 class Vertex:
     """
-    (Node)
-    Class Vertex
-    Argument: value
-    Instantiate: Vertex(5)
-    Return: nothing
+    AKA: Node
+    Class
+    Arguement: value
+    Intstantiate: Vertex(5)
+    :return: nothing
     """
     def __init__(self, value):
         self.value = value
-        # Property of value
+    # property of value
 
 class Edge:
     """
     Class Edge
     Arguments: vertex, an optional weight
-    Instantiate: Edge(vertex, 'optional weight')
-    return: nothing
+    Instantiate: Edge(vertex, 5)
+    :return: nothing
     """
-    def __init__(self,vertex, weight):
+    def __init__(self, vertex, weight):
         self.vertex = vertex
         self.weight = weight
 
-if __name__=='__main__':
+if __name__ == '__main__':
     graph = Graph()
     vertex = Vertex(5)
